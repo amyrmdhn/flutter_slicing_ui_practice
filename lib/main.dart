@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slicing_ui_practice/widgets/item_service_coffee.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final colorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
   seedColor: const Color.fromARGB(255, 102, 6, 247),
-  background: const Color.fromARGB(255, 56, 49, 66),
+  background: const Color.fromARGB(255, 214, 214, 215),
 );
 
 final theme = ThemeData().copyWith(
   scaffoldBackgroundColor: colorScheme.background,
   colorScheme: colorScheme,
-  textTheme: GoogleFonts.ubuntuCondensedTextTheme().copyWith(
-    titleSmall: GoogleFonts.ubuntuCondensed(
+  textTheme: GoogleFonts.latoTextTheme().copyWith(
+    titleSmall: GoogleFonts.lato(
       fontWeight: FontWeight.bold,
     ),
-    titleMedium: GoogleFonts.ubuntuCondensed(
+    titleMedium: GoogleFonts.lato(
       fontWeight: FontWeight.bold,
     ),
-    titleLarge: GoogleFonts.ubuntuCondensed(
+    titleLarge: GoogleFonts.lato(
       fontWeight: FontWeight.bold,
     ),
   ),
@@ -38,8 +39,16 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Slicing UI Practice'),
         ),
-        body: Center(
-          child: Text('Test..'),
+        body: const Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+             Center(
+              child: ItemServiceCoffee(
+                titleText: 'Casual Hot Coffee',
+                descriptionText: 'Kopi enak dan mantap nih bosku.',
+              ),
+            )
+          ],
         ),
       ),
     );
